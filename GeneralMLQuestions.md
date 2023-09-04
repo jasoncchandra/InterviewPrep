@@ -32,3 +32,55 @@ Be cautious with evaluation metrics. Accuracy may not be a good measure in unbal
 
 
 
+## 2. What are some differences when you minimize squared error vs absolute error? Which error cases would each metric be appropriate?
+
+MSE:
+Characteristics:
+Squaring the errors penalizes large errors more heavily than small errors. This makes MSE sensitive to outliers.
+It gives more weight to data points with large errors, which can be a problem if you want to prioritize accuracy for all data points.
+MSE is differentiable, which makes it suitable for optimization using techniques like gradient descent.
+
+Appropriate Use Cases:
+MSE is often used when you want the model to have strong incentives to minimize the impact of outliers or extreme errors.
+It is commonly used in situations where the distribution of errors is assumed to be Gaussian (normal), as many statistical methods are based on this assumption.
+
+MAE:
+Characteristics:
+MAE treats all errors equally, regardless of their size. It is less sensitive to outliers compared to MSE.
+It provides a more robust measure of central tendency and is less affected by extreme values.
+MAE is not differentiable at zero, which can make optimization more challenging in some cases.
+
+Appropriate Use Cases:
+MAE is often preferred when you want the model's performance to be less influenced by outliers or when you have reason to believe that the error distribution is not necessarily Gaussian.
+It is commonly used in situations where you want a more interpretable error metric, as the absolute values of errors are easier to understand than squared values.
+
+
+## 3. When performing K-means clustering, how to choose K?
+
+- K-means clustering is an unsupervised machine learning algorithm for data clustering and partitioning.
+- It groups similar data points into clusters based on their features.
+- The algorithm involves the following steps:
+1) Initialize K cluster centroids randomly within the data space.
+2) Assign each data point to the cluster whose centroid is closest (Assignment Step).
+3) Recalculate the centroids by taking the mean of data points in each cluster (Update Step).
+4) Repeat the Assignment and Update steps until convergence.
+- The choice of the number of clusters (K) is crucial and can impact the quality of clustering results.
+- Common methods to determine an optimal K include the Elbow method and the Silhouette method.
+- K-means is sensitive to the initial centroids and is biased toward spherical clusters.
+- It's widely used for data analysis, image processing, customer segmentation, and more.
+
+
+Elbow Method:
+
+The Elbow method is a graphical technique to find the optimal number of clusters (K).
+It involves running K-means with different values of K and plotting the sum of squared distances (inertia) versus K.
+Look for an "elbow point" in the plot, where the inertia starts to level off.
+The K value at the elbow point is often considered the optimal number of clusters.
+Silhouette Method:
+
+The Silhouette method assesses the quality of clustering for different values of K.
+It calculates a silhouette score for each K, measuring how similar data points are to their own cluster compared to other clusters.
+Higher silhouette scores indicate better cluster separation.
+Calculate the mean silhouette score for each K and choose the K with the highest score as the optimal number of clusters.
+
+In summary, the Elbow method looks for an inflection point in the inertia plot, while the Silhouette method evaluates the quality of clustering using silhouette scores. These methods help determine the most suitable number of clusters for a given dataset and problem.
