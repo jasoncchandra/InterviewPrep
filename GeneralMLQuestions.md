@@ -321,5 +321,29 @@ Reason Codes:
 Assign reason codes or labels to each rejected applicant based on the specific factors that contributed to their rejection.
 These reason codes can be predefined categories (e.g., low credit score, insufficient income) or descriptive labels.
 
+After finding our the reason, plot them indivdually against the y, to plot a RESPONSE CURVE!
 
-After finding our the reason, plot them indiivdually against the y, and observe!
+
+## 12. Say you are given a very large corpus of words. How do you identify synonyms?
+
+Leverage Lexical Resources:
+
+Utilize established lexical resources like WordNet, Roget's Thesaurus, or similar databases that provide structured information about synonyms and related words. These resources categorize words into synsets (sets of synonyms) and can be queried programmatically.
+
+Word Embeddings and Cosine Similarity:
+
+Train or use pre-trained word embeddings like Word2Vec, GloVe, or FastText on your corpus. Word embeddings capture semantic relationships between words, making it possible to find synonyms based on vector similarity. Words with similar embeddings are likely to be synonyms. Compute cosine similarity between word vectors in your embeddings. Words with high cosine similarity are more likely to be synonyms. You can use libraries like scikit-learn or gensim in Python for this purpose.
+
+Word Frequency and Context Analysis:
+
+Analyze word frequency patterns in your corpus. Words that frequently co-occur in similar contexts may be synonyms. Techniques like pointwise mutual information (PMI) or term frequency-inverse document frequency (TF-IDF) can help identify related words. Use contextual analysis and natural language processing (NLP) techniques to identify synonyms based on the context in which words are used. For example, word sense disambiguation algorithms can help distinguish between different meanings of a word.
+
+Clustering and Machine Learning:
+
+Apply clustering algorithms, such as k-means or hierarchical clustering, to group words with similar context or embeddings. Words in the same cluster may be synonyms or have related meanings. Train machine learning models like word2vec or BERT on your corpus and use them to predict synonyms or word relationships. These models can capture complex semantic information.
+
+Validation and Customization:
+
+Validate synonym identification results and consider building custom synonym databases for domain-specific vocabularies when needed.
+
+
