@@ -97,6 +97,7 @@ Choose algorithms that are inherently less sensitive to outliers, such as decisi
 Robust Scaling and Standardization:
 
 Apply robust scaling techniques like the Median Absolute Deviation (MAD) or robust z-scores when preprocessing your data. These scaling methods are less affected by extreme values.
+
 Robust Loss Functions:
 
 Utilize loss functions that are less sensitive to outliers, such as the Huber loss for regression or the robust loss for classification. These loss functions provide a balance between mean squared error (MSE) and mean absolute error (MAE).
@@ -109,3 +110,23 @@ Anomaly Detection and Separate Handling:
 
 Use anomaly detection techniques to identify and label outliers separately from the majority of the data. Then, decide on an appropriate strategy for handling these outliers, such as removing them or transforming them based on domain knowledge.
 
+
+## 5. You are running a multiple linear regression and you think several of the predictors are correlated. How will the results be affected? How do you deal with it?
+
+1. Multicollinearity: High correlation between predictors leads to multicollinearity. This makes it difficult to determine the individual effect of each predictor on the dependent variable. It can also lead to unstable coefficient estimates.
+
+2. Inflated Standard Errors: Multicollinearity tends to increase the standard errors of the coefficient estimates. This can result in wider confidence intervals and reduced statistical significance for the predictors.
+
+3. Unreliable Coefficient Estimates: The coefficients of correlated predictors can become unstable and sensitive to small changes in the data, making them unreliable for making predictions or drawing conclusions.
+
+How to deal:
+
+1. Variable Selection: Remove one or more of the highly correlated predictors from the model. Choose the predictors that are most relevant to your research question or domain knowledge.
+
+2. Feature Engineering: Create new features that are combinations of the correlated predictors. For example, you can calculate ratios, differences, or interaction terms between them to capture their joint effect.
+
+3. Principal Component Analysis (PCA): Use PCA to transform the correlated predictors into a set of orthogonal (uncorrelated) components. You can then use these components as predictors in your regression model.
+
+4. Ridge or Lasso Regression: These regularization techniques can help mitigate multicollinearity by penalizing the absolute size of the regression coefficients. Ridge regression, in particular, can be useful in reducing the impact of correlated predictors.
+
+## 6. 
