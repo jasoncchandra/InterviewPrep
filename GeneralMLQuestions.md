@@ -299,3 +299,27 @@ Interpretability:
 
 Gradient Boosting can be less interpretable due to the sequential nature of building trees. However, it offers feature importance scores and can sometimes be visualized to understand the model's behavior.
 
+## 11. Say we are running a binary classification model, and rejected applicants must be supplied with a reason. How would you supply the reasons?
+
+Feature Importance Analysis:
+
+Perform feature importance analysis on your binary classification model to identify which features or factors had the most influence on the rejection decision.
+Features with higher importance values are more likely to be relevant in explaining the decision.
+
+Threshold Analysis:
+
+Examine the threshold used for classifying applicants as "rejected." Adjust the threshold to be more lenient or strict based on your business requirements.
+By changing the threshold, you can provide reasons to applicants whose scores fall near the decision boundary.
+
+Top N Influential Features:
+
+Select the top N most influential features that contributed to the rejection decision, where N is a manageable number.
+Provide applicants with information about their performance or attributes in these key areas.
+
+Reason Codes:
+
+Assign reason codes or labels to each rejected applicant based on the specific factors that contributed to their rejection.
+These reason codes can be predefined categories (e.g., low credit score, insufficient income) or descriptive labels.
+
+
+After finding our the reason, plot them indiivdually against the y, and observe!
