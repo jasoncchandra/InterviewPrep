@@ -188,3 +188,114 @@ If feasible, try to collect additional data or features that might help predict 
 
 Assess the impact of different imputation methods on your model's performance. Use techniques like cross-validation to compare the results of different strategies and choose the one that works best for your specific problem.
 
+
+## 8. Say you are running a logistic regression and the results look weird. How do you improve or what other models would you look into?
+
+Feature Selection and Engineering:
+
+Carefully select relevant features and remove irrelevant ones to simplify the model.
+Consider feature engineering to create new informative variables.
+
+Regularization:
+
+Apply L1 (Lasso) or L2 (Ridge) regularization to control overfitting and improve generalization.
+
+Or... add additional features:
+
+Logistic Regression is generally high bias, so adding more features should be helpful? 
+
+Normalizing:
+
+No feature should dominate the model, should be normalized.
+
+Model Evaluation:
+
+Use appropriate evaluation metrics (e.g., accuracy, precision, recall, F1-score) and cross-validation to assess model performance.
+Can also do k-fold cross validation along with hyperparametic tuning.
+Consider ROC AUC and confusion matrices for a more comprehensive evaluation.
+
+Consider Alternative Models:
+
+If logistic regression results remain unsatisfactory, explore alternative models like Random Forest, Gradient Boosting, or Support Vector Machines (SVM) to capture more complex relationships in the data.
+
+
+
+## 9. You are running a classic linear regression but accidentally duplicated every data point. What are the implication?
+
+Impact on Coefficients: The regression coefficients (slope and intercept) will not change because they are determined based on the relative differences between data points. Duplicating data points does not alter the relationships between the independent and dependent variables.
+
+Standard Errors and P-values: The standard errors of the coefficients may decrease because you have effectively increased the sample size. As a result, p-values associated with the coefficients may become smaller, potentially leading to the incorrect conclusion that some predictors are statistically significant when they are not.
+
+R-squared and F-statistic: The R-squared value, which measures the proportion of variance explained by the model, will not change because it is based on the overall fit of the model to the data, not the specific data points. Similarly, the F-statistic for the overall significance of the model may not change significantly.
+
+Confidence Intervals: The confidence intervals for the regression coefficients may become narrower due to the increased sample size. However, this does not improve the validity of the regression results if the data is duplicated.
+
+Residuals and Model Fit: The residuals (the differences between observed and predicted values) will not be affected by duplicating data points. The model's fit to the data will remain the same.
+
+Interpretation and Generalization: The key issue with duplicating data points is that it does not improve the quality of the analysis or the model's ability to generalize to new, unseen data. In fact, it can introduce bias and inaccuracies in the analysis.
+
+
+
+## 10. Compare and contrast Random forest and Gradient Boost
+
+
+Random Forest and Gradient Boosting are both ensemble learning techniques used in machine learning for both classification and regression tasks. However, they have some significant differences in their underlying algorithms and how they build ensembles. 
+
+Random Forest and Gradient Boosting are both ensemble learning techniques, but they differ in several key aspects. Random Forest builds multiple decision trees independently with bootstrapped data and random feature selection, reducing variance and producing robust models. In contrast, Gradient Boosting constructs decision trees sequentially, correcting errors from previous trees using weighted data, achieving high predictive performance but potentially requiring more careful hyperparameter tuning. Random Forest is parallelizable, making it suitable for distributed computing, while Gradient Boosting is typically sequential. Random Forest is known for its simplicity and feature importance scores, whereas Gradient Boosting excels in predictive accuracy but can be less interpretable. The choice between them depends on specific problem characteristics and priorities.
+
+
+Random Forest:
+
+Base Learners:
+
+Random Forest is an ensemble of decision trees. It builds multiple decision trees independently and combines their predictions.
+
+Training Process:
+
+Each decision tree in a Random Forest is built using a random subset of the training data (bootstrapping).
+Feature selection is randomized, typically considering a random subset of features at each split.
+
+Parallelization:
+
+Random Forest can be parallelized because each decision tree can be built independently.
+
+Bias-Variance Trade-off:
+
+Random Forest reduces variance (overfitting) compared to individual decision trees by averaging predictions across multiple trees.
+
+Handling Overfitting:
+
+It typically uses no or minimal pruning on individual trees, as the ensemble averaging mitigates overfitting.
+
+Interpretability:
+
+Random Forest provides feature importance scores, but interpreting individual trees in the ensemble can be challenging.
+
+
+
+Gradient Boosting:
+
+Base Learners:
+
+Gradient Boosting builds an ensemble of decision trees sequentially. Each tree corrects the errors of the previous one.
+
+Training Process:
+
+Each decision tree is built using a weighted version of the training data. Data points that were misclassified or had higher residuals in the previous tree are given more weight in the subsequent tree.
+
+Parallelization:
+
+Gradient Boosting is typically sequential because each tree relies on the previous one's predictions.
+
+Bias-Variance Trade-off:
+
+Gradient Boosting reduces both bias (underfitting) and variance (overfitting) by gradually improving the model with each new tree.
+
+Handling Overfitting:
+
+It often uses shallow trees (few nodes) and a small learning rate to prevent overfitting.
+
+Interpretability:
+
+Gradient Boosting can be less interpretable due to the sequential nature of building trees. However, it offers feature importance scores and can sometimes be visualized to understand the model's behavior.
+
