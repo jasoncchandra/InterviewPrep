@@ -76,6 +76,8 @@ The Elbow method is a graphical technique to find the optimal number of clusters
 It involves running K-means with different values of K and plotting the sum of squared distances (inertia) versus K.
 Look for an "elbow point" in the plot, where the inertia starts to level off.
 The K value at the elbow point is often considered the optimal number of clusters.
+
+
 Silhouette Method:
 
 The Silhouette method assesses the quality of clustering for different values of K.
