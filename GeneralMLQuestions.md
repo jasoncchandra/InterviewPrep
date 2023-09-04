@@ -129,4 +129,62 @@ How to deal:
 
 4. Ridge or Lasso Regression: These regularization techniques can help mitigate multicollinearity by penalizing the absolute size of the regression coefficients. Ridge regression, in particular, can be useful in reducing the impact of correlated predictors.
 
-## 6. 
+## 6. Describe a random forest. How are they better than decision trees?
+
+ A decision tree is a supervised machine learning algorithm that represents a hierarchical, tree-like structure for making decisions and predictions. Each internal node of the tree represents a decision based on a feature attribute, leading to branches representing the possible outcomes of the decision. These branches ultimately lead to leaf nodes that provide the final prediction or decision. Decision trees are interpretable and useful for visualizing decision-making processes, but they can be prone to overfitting. Ensemble methods like Random Forests address this by combining multiple decision trees to improve accuracy and generalization.
+
+ A Random Forest is an ensemble learning method used in machine learning for both classification and regression tasks. It is an extension of decision trees and is designed to overcome some of the limitations of individual decision trees while improving predictive accuracy and generalization. 
+
+
+Reduced Overfitting: Random Forests mitigate overfitting by *averaging* predictions from multiple trees, resulting in better generalization to new data.
+
+Improved Accuracy: Random Forests typically provide more accurate predictions due to the aggregation of multiple trees that capture complex patterns in the data.
+
+Robustness to Outliers: They are more robust to outliers and noisy data because they combine the outputs of multiple trees, which can handle unusual data points effectively.
+
+Feature Importance: Random Forests offer a measure of feature importance, aiding in feature selection and understanding the data.
+
+Parallelization: Building individual trees in a Random Forest can be done in parallel, making it efficient for large datasets.
+
+Handling High-Dimensional Data: They effectively handle datasets with many features without requiring extensive feature selection, as they automatically select subsets of features for each tree.
+
+Out-of-Bag (OOB) Error Estimation: Random Forests utilize OOB samples for estimating generalization error without the need for a separate validation se
+
+
+## 7. In the credit project I did, there are many rows with missing values when we are trying to predict the likelihood of a given transaction behind a fraud. How do I deal with it?
+
+1 Data Understanding:
+
+Start by understanding the nature and patterns of missing data. Identify which variables have missing values and the reasons behind the missingness. For example, are they missing completely at random, or is there a systematic reason for the missing values?
+
+2 Data Imputation:
+
+Choose an appropriate imputation strategy based on the type of missing data:
+For numerical features, you can impute missing values with the mean, median, or a statistically estimated value based on other related features.
+For categorical features, you can impute missing values with the mode (most frequent category) or use a separate category to represent missing values.
+Consider more advanced imputation methods like regression imputation or k-nearest neighbors imputation for complex relationships.
+
+3 Feature Engineering:
+
+Create new features that encode information about missingness. For example, you can add binary flags indicating whether a value was missing or not, which can sometimes be informative for the model.
+
+4 Model-Based Imputation:
+
+Utilize predictive models (e.g., decision trees, random forests) to predict missing values based on other available features. This approach can capture complex relationships in the data.
+
+5 Multiple Imputations:
+
+Consider multiple imputations to account for uncertainty in imputed values. Techniques like Multiple Imputation by Chained Equations (MICE) generate multiple datasets with imputed values and average the results from multiple models.
+
+6 Domain Knowledge:
+
+Leverage domain knowledge to determine appropriate imputation strategies. Sometimes, domain experts can provide insights into the most reasonable way to fill missing data.
+
+7 Data Collection:
+
+If feasible, try to collect additional data or features that might help predict missing values more accurately. This can improve imputation quality.
+
+8 Evaluate Impact:
+
+Assess the impact of different imputation methods on your model's performance. Use techniques like cross-validation to compare the results of different strategies and choose the one that works best for your specific problem.
+
