@@ -86,3 +86,26 @@ Higher silhouette scores indicate better cluster separation.
 Calculate the mean silhouette score for each K and choose the K with the highest score as the optimal number of clusters.
 
 In summary, the Elbow method looks for an inflection point in the inertia plot, while the Silhouette method evaluates the quality of clustering using silhouette scores. These methods help determine the most suitable number of clusters for a given dataset and problem.
+
+
+## 4. How to make models robust to outliners:
+
+Use Robust Algorithms:
+
+Choose algorithms that are inherently less sensitive to outliers, such as decision trees, random forests, or gradient boosting. These models are naturally capable of handling data variations.
+
+Robust Scaling and Standardization:
+
+Apply robust scaling techniques like the Median Absolute Deviation (MAD) or robust z-scores when preprocessing your data. These scaling methods are less affected by extreme values.
+Robust Loss Functions:
+
+Utilize loss functions that are less sensitive to outliers, such as the Huber loss for regression or the robust loss for classification. These loss functions provide a balance between mean squared error (MSE) and mean absolute error (MAE).
+
+Winsorization:
+
+Apply winsorization to replace extreme outlier values with values at a certain quantile (e.g., replace values above the 99th percentile with the value at the 99th percentile). This technique caps extreme values and reduces their influence.
+
+Anomaly Detection and Separate Handling:
+
+Use anomaly detection techniques to identify and label outliers separately from the majority of the data. Then, decide on an appropriate strategy for handling these outliers, such as removing them or transforming them based on domain knowledge.
+
