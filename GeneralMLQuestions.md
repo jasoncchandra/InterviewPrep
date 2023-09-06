@@ -386,3 +386,123 @@ Each data point serves as the test set once, while the remaining data points are
 LOOCV is computationally expensive for large datasets but provides a robust estimate of model performance.
 
 Cross-validation helps prevent overfitting, provides more reliable estimates of a model's performance, and aids in model selection and hyperparameter tuning. It is a crucial step in evaluating the generalization ability of machine learning models.
+
+## 15. How to build a lead scoring algo to predict whether a prospective company is likely to convert into enterprise customer?
+
+Lead scoring is a method used in sales and marketing to evaluate and rank the potential of leads (prospective customers) based on their likelihood to convert into paying customers. It helps prioritize and focus sales and marketing efforts on leads that are most likely to result in successful conversions. Lead scoring is typically done by assigning a numerical score or grade to each lead based on various criteria and behaviors. Here are more specific examples of lead scoring criteria:
+
+1 Data Collection:
+
+Gather historical data on leads and their outcomes, including which leads converted into enterprise customers and which did not.
+Collect data on various attributes of the leads and their interactions with your company, such as website visits, email responses, webinar attendance, and more.
+
+2 Data Preprocessing:
+
+Clean and preprocess the data, handling missing values, outliers, and data types.
+Normalize or scale numerical features if needed.
+Encode categorical variables using techniques like one-hot encoding.
+
+3 Feature Engineering:
+
+Create relevant features that may influence lead conversion. These features could include:
+Lead demographics (industry, location, company size).
+Lead behavior (website engagement, email open rates, response times).
+Interaction history (number of touchpoints, type of touchpoints).
+Historical conversion rates for leads from similar industries or demographics.
+
+4 Data Splitting:
+
+Split your dataset into training, validation, and test sets. A common split might be 70% training, 15% validation, and 15% test data.
+
+5 Model Selection:
+
+Choose an appropriate machine learning model for classification. Common choices include logistic regression, random forests, gradient boosting, or neural networks.
+Experiment with different algorithms to find the one that best fits your data. Logistic reg makes more sense since it's a straightforward solution with easily interpretable result.
+
+
+6 Model Training:
+
+Train the selected model using the training data.
+Tune hyperparameters using techniques like grid search or randomized search.
+Monitor model performance on the validation set during training.
+
+
+16. How would you approach creating a music recommendation algo?
+
+Creating a music recommendation algorithm involves leveraging user data and machine learning techniques to provide personalized music recommendations based on a user's preferences. Here's a high-level approach to building such an algorithm:
+
+1 Data Collection:
+
+Gather a comprehensive dataset of music tracks, including metadata (e.g., artist, genre, release date) and user interactions (e.g., listening history, user ratings, playlists). Utilize public music datasets or collaborate with music streaming platforms to obtain user data.
+
+2 Data Preprocessing:
+
+Clean and preprocess the dataset, handling missing values, duplicates, and outliers. Create user-item interaction matrices, where rows represent users, columns represent music tracks, and values represent interactions (e.g., play counts, likes).
+
+3 Feature Engineering:
+
+Extract relevant features from the music metadata, such as genre, artist popularity, release date, and acoustic features (e.g., tempo, mood, key). Incorporate user-specific features, including demographics and historical user interactions.
+
+4 User Profiling:
+
+Create user profiles by analyzing historical interactions and preferences. Techniques like collaborative filtering, matrix factorization, or deep learning can be used to learn latent user preferences.
+  
+  Content-Based Filtering:
+
+Use content-based recommendation techniques to suggest music based on track features and user preferences. For example, recommend songs with similar genres or acoustic properties to those liked by the user.
+
+  Collaborative Filtering:
+
+Implement collaborative filtering methods, such as user-based or item-based recommendation, to identify music tracks liked by users with similar preferences. Matrix factorization (e.g., Singular Value Decomposition or matrix factorization techniques like Matrix Factorization) can also be effective.
+
+  Hybrid Models:
+
+Combine content-based and collaborative filtering techniques to create hybrid recommendation models that leverage both user profiles and item features.
+
+5 Evaluation:
+
+Split the dataset into training and test sets to evaluate the model's performance. Common evaluation metrics include Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and precision-recall metrics.
+Implement A/B testing or online evaluation to assess the real-world impact of recommendations on user engagement and satisfaction.
+
+6 Scalability:
+
+Ensure the algorithm can handle large-scale datasets and real-time recommendation requests. Consider distributed computing and caching mechanisms to optimize recommendations.
+
+7 Feedback Loop:
+
+Continuously collect user feedback and interaction data to update and improve the recommendation algorithm. Implement reinforcement learning techniques to adapt to changing user preferences.
+
+8 Deployment:
+
+Integrate the recommendation algorithm into a music streaming platform or application to provide users with personalized music recommendations in real time.
+
+9 User Interface:
+
+Design a user-friendly interface that displays recommended songs and allows users to provide feedback on recommendations (likes, dislikes).
+
+10 Privacy and Data Security:
+
+Ensure compliance with data privacy regulations and take measures to protect user data.
+Building a music recommendation algorithm is an iterative process that involves refining and fine-tuning the model based on user feedback and data insights. The goal is to provide users with a personalized music experience that keeps them engaged and satisfied.
+
+## 17. Define what it means for a function to be convex. What is an example of a ML algo that is not convex and why? What about in the field of finance?
+
+A function is considered convex if, for any two points within its domain, the line segment connecting these two points lies entirely above or on the graph of the function. In other words, a function f(x) is convex if, for all x1 and x2 in its domain and for all values of t in the interval [0, 1], the following inequality holds:
+
+f(tx1 + (1 - t)x2) ≤ tf(x1) + (1 - t)f(x2)
+
+In simple terms, a convex function forms a "bowl-like" shape where any chord connecting two points on the graph lies above the graph itself.
+
+Examples of Convex Functions:
+
+Linear functions: f(x) = ax + b, where a is a constant.
+Quadratic functions with a positive coefficient for the squared term: f(x) = ax^2 + bx + c, where a > 0.
+Exponential functions: f(x) = e^ax, where a is a constant.
+Machine Learning Algorithm Example That Is Not Convex:
+
+Neural Networks: Neural networks, especially deep neural networks, are not convex with respect to their loss functions. The loss surface is highly non-convex due to the presence of multiple local minima and saddle points. The non-convexity of neural network loss surfaces makes optimization challenging, and finding the global minimum is not guaranteed.
+
+Finance Example of Non-Convexity:
+
+Portfolio Optimization: In finance, portfolio optimization involves selecting a combination of assets to maximize returns while managing risk. The objective function for portfolio optimization is typically non-convex due to the presence of multiple assets with different correlations and risk-return profiles. Finding the optimal allocation that maximizes returns while minimizing risk involves dealing with a non-convex optimization problem. Various techniques, such as mean-variance optimization and heuristic algorithms, are used to address the non-convexity of this problem.
+In both machine learning and finance, dealing with non-convex optimization problems requires specialized optimization techniques, global search algorithms, or heuristic methods to find satisfactory solutions in the presence of multiple local minima or complex, non-convex loss surfaces.
