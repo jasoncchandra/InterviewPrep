@@ -506,3 +506,29 @@ Finance Example of Non-Convexity:
 
 Portfolio Optimization: In finance, portfolio optimization involves selecting a combination of assets to maximize returns while managing risk. The objective function for portfolio optimization is typically non-convex due to the presence of multiple assets with different correlations and risk-return profiles. Finding the optimal allocation that maximizes returns while minimizing risk involves dealing with a non-convex optimization problem. Various techniques, such as mean-variance optimization and heuristic algorithms, are used to address the non-convexity of this problem.
 In both machine learning and finance, dealing with non-convex optimization problems requires specialized optimization techniques, global search algorithms, or heuristic methods to find satisfactory solutions in the presence of multiple local minima or complex, non-convex loss surfaces.
+
+
+## 18. Explain what information gain and entopy are in context of a decision tree and give me a numerical example.
+
+In the context of decision trees, information gain and entropy are used to determine the best attribute to split the data at each node, aiming to maximize the effectiveness of the tree in classifying or predicting outcomes. 
+
+Entropy:
+Entropy is a measure of impurity or disorder in a dataset. In the context of decision trees, it quantifies how mixed or uncertain the class labels are within a dataset. The entropy of a node (S) is calculated using the formula:
+S = -p1 * log2(p1) - p2 * log2(p2) - ... - pk * log2(pk)
+Where:
+
+p1, p2, ..., pk are the proportions of different classes within the node.
+k is the number of distinct classes.
+Entropy ranges from 0 (pure node with one class) to 1 (maximum impurity with equal proportions of all classes). A lower entropy indicates a more homogeneous node.
+
+Information Gain:
+Information gain (IG) is a measure of how much the entropy decreases when a dataset is split based on a particular attribute. It quantifies the reduction in uncertainty or disorder. The information gain for an attribute (A) is calculated as follows:
+
+IG(A) = S(parent) - Σ (|Si| / |S|) * S(Si)
+Where:
+
+S(parent) is the entropy of the parent node before the split.
+n is the number of possible values (branches) of attribute A.
+|Si| is the number of instances in the i-th branch.
+S(Si) is the entropy of the i-th branch.
+A higher information gain indicates that splitting the dataset based on attribute A results in a more significant reduction in entropy and, therefore, better class separation.
