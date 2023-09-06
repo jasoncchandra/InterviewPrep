@@ -560,3 +560,48 @@ S(Overcast) = 0 // perfectly pure
 S(Rainy) = - (1/5) * log2(1/5) - (4/5) * log2(4/5) ≈ 0.72
 
 
+## 20. what is L1 and L2 regulatization? Whare are the differences betwee nthe two?
+
+L1 and L2 regularization are techniques used in machine learning and statistics to prevent overfitting and improve the generalization of models, particularly linear models like linear regression or logistic regression. They are also known as Lasso (L1) and Ridge (L2) regularization, respectively. Here's an explanation of each and the key differences between the two:
+
+L1 Regularization (Lasso):
+
+Penalty Term: L1 regularization adds a penalty term to the cost function of a linear model. The penalty term is the absolute sum of the model's coefficients (weights).
+Objective Function: The objective function with L1 regularization can be written as:
+J(w) = Loss(w) + λ * Σ|wi|
+where Loss(w) represents the loss without regularization, wi are the model coefficients, and λ is the regularization hyperparameter. The term Σ|wi| encourages sparsity in the model, meaning it tends to set some coefficients to exactly zero.
+Effect: L1 regularization encourages feature selection by driving some coefficients to zero. It effectively performs feature selection and simplifies the model by eliminating less important features.
+
+L2 Regularization (Ridge):
+
+Penalty Term: L2 regularization adds a penalty term to the cost function of a linear model. The penalty term is the sum of the squares of the model's coefficients (weights).
+Objective Function: The objective function with L2 regularization can be written as:
+
+J(w) = Loss(w) + λ * Σ(wi^2)
+
+where Loss(w) represents the loss without regularization, wi are the model coefficients, and λ is the regularization hyperparameter. The term Σ(wi^2) discourages large coefficients and tends to distribute the impact of features more evenly.
+Effect: L2 regularization does not drive coefficients to exactly zero but rather reduces the magnitude of all coefficients. It helps prevent overfitting by imposing a "shrinkage" effect on coefficients and can improve the stability of the model.
+
+KEY DIFFERENCES:
+
+Effect on Coefficients:
+
+L1 regularization encourages sparsity by driving some coefficients to exactly zero, effectively performing feature selection.
+L2 regularization reduces the magnitude of all coefficients but does not force them to be exactly zero.
+
+Feature Selection:
+
+L1 regularization is often used when feature selection is desired or when there is a suspicion that only a subset of features is relevant.
+L2 regularization primarily focuses on improving model stability and preventing overfitting but does not perform explicit feature selection.
+
+Robustness to Multicollinearity:
+
+L2 regularization is more robust to multicollinearity (high correlation between features) compared to L1 regularization.
+L1 regularization may arbitrarily select one feature among a group of highly correlated features, making it less robust in such cases.
+
+Sensitivity to Hyperparameter λ:
+
+L1 regularization tends to set some coefficients to exactly zero for sufficiently large values of λ.
+L2 regularization primarily controls the magnitude of coefficients but rarely forces them to be exactly zero.
+In practice, a combination of L1 and L2 regularization, known as Elastic Net regularization, is often used to leverage the benefits of both techniques. The choice between L1 and L2 regularization depends on the specific problem, the need for feature selection, and the desired model characteristics.
+
