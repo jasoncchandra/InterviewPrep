@@ -532,3 +532,31 @@ n is the number of possible values (branches) of attribute A.
 |Si| is the number of instances in the i-th branch.
 S(Si) is the entropy of the i-th branch.
 A higher information gain indicates that splitting the dataset based on attribute A results in a more significant reduction in entropy and, therefore, better class separation.
+
+Let's consider a binary classification problem where we want to decide whether to play tennis (yes or no) based on weather attributes (Outlook, Temperature, Humidity, Wind).
+
+Suppose we have the following data for 14 instances:
+
+- 9 instances with a "Yes" label (play tennis).
+- 5 instances with a "No" label (don't play tennis).
+
+The initial entropy of the dataset is calculated as:
+
+S(parent) = - (9/14) * log2(9/14) - (5/14) * log2(5/14) ≈ 0.94
+
+
+Now, let's consider splitting the data based on the "Outlook" attribute, which has three possible values: Sunny, Overcast, Rainy. We calculate the entropy for each branch:
+
+- For "Sunny" days (5 instances, 3 "Yes," 2 "No"):
+
+S(Sunny) = - (3/5) * log2(3/5) - (2/5) * log2(2/5) ≈ 0.97
+
+- For "Overcast" days (4 instances, all "Yes"):
+
+S(Overcast) = 0 // perfectly pure
+
+- For "Rainy" days (5 instances, 1 "Yes," 4 "No"):
+
+S(Rainy) = - (1/5) * log2(1/5) - (4/5) * log2(4/5) ≈ 0.72
+
+
