@@ -1,5 +1,6 @@
 ## Cheat Sheet for ML - basic overview.
-General Topics:
+
+General Topics/Concepts:
 
 **Linear Algebra:**
 
@@ -10,8 +11,24 @@ General Topics:
 - Gradient descent is a fundamental optimization algorithm in machine learning used to minimize the cost or loss function of a model during training. It operates by iteratively adjusting model parameters in the direction of the steepest descent of the cost function, as determined by the gradient (derivative). In each iteration, it calculates the gradient of the cost function with respect to the model parameters and updates the parameters by taking a step proportional to the negative gradient. This process continues until convergence, where the cost function reaches a minimum or a predetermined number of iterations is reached. Gradient descent is vital for training various machine learning models, including neural networks, linear regression, and logistic regression, and is crucial for finding the optimal model parameters that best fit the data.
 
 Objective Function (Cost Function): Typically denoted as J(θ), where θ represents the model parameters (weights and biases).
+
 Gradient of the Cost Function: ∇J(θ), which is the vector of partial derivatives of J(θ) with respect to each parameter.
+
 Update Rule: θ := θ - α * ∇J(θ), where α (alpha) is the learning rate, a hyperparameter that controls the step size in each iteration.
+
 Iteration: This update rule is applied iteratively until convergence is reached or a specified number of iterations is completed.
-- Stoachstic Gradient Descent adds an element of randomness so that the gradient does not get stuck.
+
+- Stoachstic Gradient Descent adds an element of randomness so that the gradient does not get stuck. It uses one data point at a time and uses smaller subsect of datapoint.
+
+**Model Evaluation and Selection**
+
+In model evaluation, the primary objective is to measure a model's performance using appropriate evaluation metrics such as accuracy, precision, recall, F1-score, or mean squared error, depending on the problem type (classification or regression). Cross-validation techniques, like k-fold cross-validation, are often employed to obtain a robust estimate of a model's performance and assess its generalization ability. It is essential to carefully select the right evaluation metrics that align with the problem's goals and interpret the results in the context of the problem domain.
+
+- It is also important to recognize how well the TEST SET performs on the TRAIN SET (usually 80%)
+
+In model selection, the focus shifts to comparing multiple candidate models to identify the one that performs the best. Common techniques include grid search and randomized search, which explore different hyperparameter settings to find the optimal configuration. Additionally, domain knowledge and intuition can guide the selection process. The chosen model should strike a balance between complexity and generalization, ensuring it can make accurate predictions on new, unseen data. Overall, model evaluation and selection are iterative processes that require a deep understanding of the data, problem, and the strengths and weaknesses of different algorithms, making them essential topics for machine learning interviews.
+
+
+**Bias Variance Tradeoff**
+
 
