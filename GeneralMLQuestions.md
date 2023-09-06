@@ -605,3 +605,7 @@ L1 regularization tends to set some coefficients to exactly zero for sufficientl
 L2 regularization primarily controls the magnitude of coefficients but rarely forces them to be exactly zero.
 In practice, a combination of L1 and L2 regularization, known as Elastic Net regularization, is often used to leverage the benefits of both techniques. The choice between L1 and L2 regularization depends on the specific problem, the need for feature selection, and the desired model characteristics.
 
+
+##  20. Describe Gradient Descent and the motivations behding Stochastic Gradient Descent.
+
+
