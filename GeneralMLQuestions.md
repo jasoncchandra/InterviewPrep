@@ -361,3 +361,28 @@ Bias²: The squared bias term, representing how much the model's predictions sys
 Variance: The variance term, representing how much the model's predictions vary when trained on different subsets of the data.
 Irreducible Error: The error that cannot be reduced, as it is inherent to the problem's complexity and noise in the data.
 
+
+## 14. Define cross validation and give examples
+
+Cross-validation is a resampling procedure used to evaluate machine learning models. It divides the dataset into training and testing sets multiple times to provide an accurate estimate of a model's performance on new, unseen data.
+
+
+Examples of Cross-Validation Techniques:
+
+K-Fold Cross-Validation:
+
+The dataset is divided into K equal-sized folds (partitions).
+The model is trained and tested K times, with each fold serving as the test set once and the remaining folds as the training set.
+Final performance metrics are usually averaged across the K iterations.
+
+
+Stratified K-Fold Cross-Validation:
+
+Similar to K-Fold Cross-Validation but ensures that each fold maintains the same class distribution as the entire dataset, which is crucial for imbalanced datasets.
+
+Leave-One-Out Cross-Validation (LOOCV):
+
+Each data point serves as the test set once, while the remaining data points are used for training.
+LOOCV is computationally expensive for large datasets but provides a robust estimate of model performance.
+
+Cross-validation helps prevent overfitting, provides more reliable estimates of a model's performance, and aids in model selection and hyperparameter tuning. It is a crucial step in evaluating the generalization ability of machine learning models.
